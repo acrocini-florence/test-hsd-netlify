@@ -1,7 +1,4 @@
 [[redirects]]
-  from = "/"
-  to = "/it"
+  from = "/en/case-history/"
+  to = "/"
   status = 301
-  force = true
-  query = {path = ":path"}
-  conditions = {}
