@@ -1,4 +1,5 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "https://test-hsd-preview-netlify.netlify.app/*"
+  to = "https://test-hsd-deploy-netlify.netlify.app/"
+  status = 301
+  force = true
