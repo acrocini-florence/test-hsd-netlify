@@ -1,0 +1,17 @@
+export const metal = [
+  "body_diameter_mm",
+  "max_speed",
+  "motor_type",
+  "torque_s1_s6_40_perc_nm",
+  "power_s1_s6_40_perc_nm",
+  "tool_interface",
+  "bearings_lubrication",
+  "weight_kg",
+  "coolant_through_shaft",
+  "vibration_sensor",
+  "elongation_sensor",
+  "shaft_clamping",
+  "bearing_preload_function",
+  "shaft_kit",
+  "cooling_housing",
+] as const;

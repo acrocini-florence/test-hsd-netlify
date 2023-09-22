@@ -1,0 +1,8 @@
+type RichText {
+  nodeType: String
+  raw: String
+}
+
+type ContentfulAsset implements ContentfulReference & Node & RemoteFile {
+  title: String
+}

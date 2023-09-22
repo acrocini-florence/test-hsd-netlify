@@ -1,0 +1,10 @@
+type contentfulProductTechnicalSheetsJsonNodeTechnicalSheet {
+  key: String
+  value: String
+}
+
+type contentfulProductTechnicalSheetsJsonNode implements Node {
+  productCode: String
+  headerLabel: String
+  # technicalSheet: contentfulProductTechnicalSheetsJsonNodeTechnicalSheet
+}
