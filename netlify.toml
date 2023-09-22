@@ -15,3 +15,9 @@
   to = "https://test-hsd-deploy-netlify.netlify.app/de/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://hsdwebsitefeatureseo.gatsbyjs.io/*"
+  to = "https://test-hsd-deploy-netlify.netlify.app/en/"
+  status = 301
+  force = true
