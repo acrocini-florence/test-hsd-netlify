@@ -15,24 +15,24 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
   stage,
   loaders,
 }) => {
-  if (process.env.NODE_ENV === "production" && !process.env.EXCLUDE_SENTRY) {
-    actions.setWebpackConfig({
-      plugins: [
-        new SentryWebpackPlugin({
-          org: "biesse-group",
-          project: "hsd-website",
-          ignore: ["app-*", "polyfill-*", "framework-*", "webpack-runtime-*"],
-          // Specify the directory containing build artifacts
-          include: "public",
-          // Auth tokens can be obtained from https://sentry.io/settings/account/api/auth-tokens/
-          // and needs the `project:releases` and `org:read` scopes
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-          // Optionally uncomment the line below to override automatic release name detection
-          // release: process.env.RELEASE,
-        }),
-      ],
-    });
-  }
+  // if (process.env.NODE_ENV === "production" && !process.env.EXCLUDE_SENTRY) {
+  actions.setWebpackConfig({
+    plugins: [
+      new SentryWebpackPlugin({
+        org: process.env.SENTRY_ORG,
+        project: process.env.SENTRY_PROJECT,
+        ignore: ["app-*", "polyfill-*", "framework-*", "webpack-runtime-*"],
+        // Specify the directory containing build artifacts
+        include: "public",
+        // Auth tokens can be obtained from https://sentry.io/settings/account/api/auth-tokens/
+        // and needs the `project:releases` and `org:read` scopes
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        // Optionally uncomment the line below to override automatic release name detection
+        // release: process.env.RELEASE,
+      }),
+    ],
+  });
+  // }
 
   if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
@@ -374,6 +374,9 @@ export const createResolvers: GatsbyNode["createResolvers"] = ({ createResolvers
     },
     ContentfulNews: {
       originalEntry: getOriginalEntryResolver("ContentfulNews"),
+    },
+    ContentfulEvent: {
+      originalEntry: getOriginalEntryResolver("ContentfulEvent"),
     },
     ContentfulProject: {
       originalEntry: getOriginalEntryResolver("ContentfulProject"),

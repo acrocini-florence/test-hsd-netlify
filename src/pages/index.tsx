@@ -149,6 +149,14 @@ const IndexPage: FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           />
         </Section>
       )} */}
+      <div
+        style={{ backgroundColor: "red", fontSize: "60px" }}
+        onClick={() => {
+          throw new Error("TEST SENTRY");
+        }}
+      >
+        TEST ERROR
+      </div>
       {data.contentfulProductCarousel?.products?.length && (
         <Section horizontalSpace={false} ref={productCarouselContainer}>
           <ProductCarousel<Queries.ContentfulProduct>

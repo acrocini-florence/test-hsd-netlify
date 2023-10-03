@@ -1,6 +1,6 @@
 {
   "name": "jamstack-website-poc",
-  "version": "0.26.0",
+  "version": "1.0.1",
   "private": true,
   "description": "jamstack-website-poc",
   "author": "Niccolò Taddei",
@@ -29,7 +29,6 @@
     "dayjs": "^1.11.8",
     "framer-motion": "^10.12.16",
     "gatsby": "^5.10.0",
-    "gatsby-adapter-netlify": "^1.0.0",
     "gatsby-plugin-cookiebot": "^1.0.3",
     "gatsby-plugin-gatsby-cloud": "^5.10.0",
     "gatsby-plugin-google-tagmanager": "^5.11.0",

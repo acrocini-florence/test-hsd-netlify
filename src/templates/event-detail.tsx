@@ -10,7 +10,7 @@ import { NewsAndEventsBody } from "../components/news-and-events/NewsAndEventsBo
 import { PageHeader } from "../components/PageHeader";
 import { SEO } from "../components/Seo/Seo";
 import { mailtoConfig } from "../config/mailto-config";
-import { PageType, SiteArea, useTrackPageview } from "../hooks/data-layer";
+import { PageType, SiteArea, useDataLayer, useTrackPageview } from "../hooks/data-layer";
 import { useTrackEventTicketRequest } from "../hooks/data-layer/useTrackEventTicketRequest";
 import { useLabels } from "../hooks/useLabels";
 import { useLocalizedPath } from "../hooks/useLocalizedPath";
@@ -41,6 +41,14 @@ const NewsDetail: FC<PageProps<Queries.EventDetailQuery, { slug: string }>> = ({
       line: null,
     });
   }, [trackPageview]);
+
+  const { pushEvent } = useDataLayer();
+  useEffect(() => {
+    pushEvent({
+      event: "news_view",
+      news_name: event?.originalEntry?.eventName ?? event?.eventName ?? "",
+    });
+  }, [event, pushEvent]);
 
   const onTrackEventTicketRequest = useTrackEventTicketRequest();
   const { isOpen, close, open } = useModal();
@@ -120,6 +128,9 @@ export const query = graphql`
       metaTitle
       metaDescription
       ctaLabel
+      originalEntry {
+        eventName
+      }
       ...EventHeaderChild
       ...EventBody
     }

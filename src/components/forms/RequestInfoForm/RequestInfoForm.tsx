@@ -96,7 +96,7 @@ export interface RequestInfoFormProps {
   defaultSelectedInterest?: InterestFieldType;
 }
 
-const maxChars = 300;
+const maxChars = 600;
 
 export const RequestInfoForm = forwardRef<HTMLDivElement, RequestInfoFormProps>(
   ({ defaultSelectedInterest, productCode, pageType, ...props }, selfRef) => {
