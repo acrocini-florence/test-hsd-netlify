@@ -1,5 +1,5 @@
 #[[redirects]]
-#  from = "https://test-hsd-preview-netlify.netlify.app/en/*"
+#  from = "/en/*"
 #  to = "https://test-hsd-deploy-netlify.netlify.app/en/"
 #  status = 301
 #  force = true
@@ -11,7 +11,7 @@
 #  force = true
 
 [[redirects]]
-  from = "https://test-hsd-preview-netlify.netlify.app/de/*"
-  to = "https://test-hsd-deploy-netlify.netlify.app/de/"
+  from = "/de/*"
+  to = "https://test-hsd-deploy-netlify.netlify.app/it/"
   status = 301
   force = true
