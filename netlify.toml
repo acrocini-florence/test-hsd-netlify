@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "https://test-hsd-deploy-netlify.netlify.app/it/"
+  from = "https://test-hsd-deploy-netlify.netlify.app/de/*"
+  to = "https://www.google/it/"
   status = 301
