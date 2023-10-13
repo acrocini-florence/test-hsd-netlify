@@ -20,7 +20,7 @@ const config: GatsbyConfig = {
     typesOutputPath: "gatsby-types.d.ts",
   },
   plugins: [
-    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-netlify`,
     `gatsby-plugin-recaptcha`,
     `gatsby-plugin-gatsby-cloud`,
     {
